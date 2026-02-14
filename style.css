@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #b16969;
+    color: #f8fafc;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+#ui {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    z-index: 10;
+    letter-spacing: 2px;
+}
+
+#game-area {
+    position: relative;
+    width: 100vw;
+    height: 85vh; /* Leaves room for the input at the bottom */
+}
+
+/* The Falling Words */
+.word {
+    position: absolute;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #310303;
+    text-shadow: 0 0 10px rgba(7, 16, 20, 0.5);
+}
+
+/* The Ship */
+#ship {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #f43f5e; /* Rose Red */
+}
+
+/* The Laser Beam */
+.laser {
+    position: fixed; /* Fixed prevents scroll interference */
+    height: 4px;
+    background: #22d3ee;
+    box-shadow: 0 0 15px #22d3ee, 0 0 5px white;
+    transform-origin: left center; /* CRITICAL: Laser grows FROM the ship */
+    z-index: 100;
+    pointer-events: none;
+    transition: opacity 0.1s ease-out;
+}
+
+/* Input Styling */
+#input-area {
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1e3747;
+}
+
+#typer {
+    background: transparent;
+    border: 2px solid #334155;
+    border-radius: 8px;
+    color: #e3eaeb;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    outline: none;
+}
+
+#typer:focus {
+    border-color: #22d3ee3f;
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+}
